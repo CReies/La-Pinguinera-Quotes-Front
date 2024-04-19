@@ -27,4 +27,16 @@ export class AuthService {
 
     return result;
   }
+
+  register(formData): Observable<IAuthResponseModel> {
+    const url = URL_RESOURCES.register;
+    const result = this.httpService
+      .post<IAuthResponseModel>(url, formData)
+      .pipe(
+        map((response) => this.mapper.map(response)),
+        tap((response) => this.storageService.set('TOKEN', response.token))
+      );
+
+    return result;
+  }
 }
