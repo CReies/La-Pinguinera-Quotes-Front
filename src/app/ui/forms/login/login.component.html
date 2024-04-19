@@ -1,0 +1,15 @@
+<form>
+  <fieldset>
+    <legend>Login</legend>
+    <section class="form-group">
+      <app-label text="Email" for="username" />
+      <app-input id="username" name="username" [required]="true" />
+    </section>
+    <section class="form-group">
+      <app-label text="Password" for="password" />
+      <app-input id="password" name="password" [required]="true" />
+    </section>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </fieldset>
+</form>
+<p>Don't have your account? <app-anchor text="Create one" href="/auth/register" /></p>
