@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LayoutAuthComponent,
-    children: [{ path: '', component: LoginComponent }],
+    children: [{ path: '', component: LoginComponent, outlet: 'auth-form' }],
   },
 ];
 
