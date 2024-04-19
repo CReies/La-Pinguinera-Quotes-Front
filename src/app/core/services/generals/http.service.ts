@@ -23,6 +23,10 @@ export class HttpService {
   }
 
   get headers(): HttpHeaders {
+    if (this.token == null) {
+      return new HttpHeaders().append('Content-Type', 'application/json');
+    }
+
     return new HttpHeaders()
       .append('Content-Type', 'application/json')
       .append('Authorization', `Bearer ${this.token}`);
