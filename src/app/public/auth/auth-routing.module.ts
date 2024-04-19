@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutAuthComponent } from '../../ui/layouts/layout-auth/layout-auth.component';
+import { authGuard } from './auth.guard';
+import { LoginContainerComponent } from '../../containers/login-container/login-container.component';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LayoutAuthComponent,
-    children: [{ path: '' }],
+    children: [
+      { path: '', component: LoginContainerComponent, outlet: 'auth-form' },
+    ],
+    canActivate: [authGuard],
   },
 ];
 
