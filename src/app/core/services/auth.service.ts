@@ -2,22 +2,25 @@ import { Injectable } from '@angular/core';
 import { HttpService } from './generals/http.service';
 import { ApiToAuthResponseMapper } from '../mappers/api-to-auth-response.mapper';
 import { Observable, map } from 'rxjs';
-import { IAuthResponse } from '../models/auth-response.model';
 import { URL_RESOURCES } from '../resources/url.resources';
+import { IAuthResponseModel } from '../models/auth-response.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthResponseService {
+export class AuthService {
   constructor(
     private readonly httpService: HttpService,
     private readonly mapper: ApiToAuthResponseMapper
   ) {}
 
-  login(): Observable<IAuthResponse> {
+  login(formData): Observable<IAuthResponseModel> {
     const url = URL_RESOURCES.login;
-    return this.httpService
-      .get<IAuthResponse>(url)
-      .pipe(map((response) => this.mapper.map(response)));
+    return this.httpService.post<IAuthResponseModel>(url, formData).pipe(
+      map((response) => {
+        console.log(response);
+        return this.mapper.map(response);
+      })
+    );
   }
 }
