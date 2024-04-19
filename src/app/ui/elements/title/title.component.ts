@@ -1,5 +1,6 @@
 import { Component, Input, input } from '@angular/core';
-import { ITitleType } from '../../../core/interfaces/ITitleType';
+
+type ITitleType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 @Component({
   selector: 'app-title',
