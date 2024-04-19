@@ -10,4 +10,5 @@ import { Component, Input } from '@angular/core';
 export class InputComponent {
   @Input() type: string = '';
   @Input() name: string = '';
+  @Input() id: string = '';
 }
