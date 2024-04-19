@@ -7,8 +7,8 @@ export class ApiToAuthResponseMapper {
     return {
       token: payload.token,
       user: {
-        Username: payload.customer.Username,
-        Email: payload.customer.Email,
+        username: payload.customer.username,
+        email: payload.customer.email,
       },
     };
   }

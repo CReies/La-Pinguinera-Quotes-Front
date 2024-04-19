@@ -1,4 +1,6 @@
 export interface IAuthResponseModel {
   token: string;
-  user: { Username: string; Email: string };
+  user: IUser
 }
+
+interface IUser { username: string; email: string };
