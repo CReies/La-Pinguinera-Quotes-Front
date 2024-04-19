@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginComponent } from '../../ui/forms/login/login.component';
-import { FormBuilder } from '@angular/forms';
 import { LoginContainerFacade } from './login-container.facade';
 
 @Component({
