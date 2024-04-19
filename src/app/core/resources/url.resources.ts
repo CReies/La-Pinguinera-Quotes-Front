@@ -1,5 +1,6 @@
-import { environment } from "../../../environments/environment.development";
+import { environment } from '../../../environments/environment.development';
 
 export const URL_RESOURCES = {
-  login: `${environment.apiUrl}/auth/login`
-}
+  login: `${environment.apiUrl}/auth/login`,
+  register: `${environment.apiUrl}/auth/register`,
+};

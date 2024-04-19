@@ -1,0 +1,19 @@
+<form (submit)="sendInfo($event)">
+  <fieldset [formGroup]="form">
+    <legend>Register</legend>
+    <section class='form-group'>
+      <app-label text='Email' for='email' />
+      <input id="email" name="email" type="email" required formControlName="email" />
+    </section>
+    <section class='form-group'>
+      <app-label text='Username' for='username' />
+      <input type="text" name="username" id="username" required formControlName="username" />
+    </section>
+    <section class='form-group'>
+      <app-label text='Password' for='password' />
+      <input id=" password" name="password" type="password" required formControlName="password" />
+    </section>
+    <app-button text="Register" />
+  </fieldset>
+  <p>Already have an account? <app-anchor text='Log In' href='/auth/login' /></p>
+</form>

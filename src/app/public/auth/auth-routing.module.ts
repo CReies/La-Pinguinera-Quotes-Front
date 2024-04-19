@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutAuthComponent } from '../../ui/layouts/layout-auth/layout-auth.component';
 import { authGuard } from './auth.guard';
 import { LoginContainerComponent } from '../../containers/login-container/login-container.component';
+import { RegisterContainerComponent } from '../../containers/register-container/register-container.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,13 @@ const routes: Routes = [
     component: LayoutAuthComponent,
     children: [
       { path: '', component: LoginContainerComponent, outlet: 'auth-form' },
+    ],
+    canActivate: [authGuard],
+  },  {
+    path: 'register',
+    component: LayoutAuthComponent,
+    children: [
+      { path: '', component: RegisterContainerComponent, outlet: 'auth-form' },
     ],
     canActivate: [authGuard],
   },
