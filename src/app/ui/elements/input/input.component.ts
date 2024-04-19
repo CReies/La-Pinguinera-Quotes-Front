@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -11,4 +11,5 @@ export class InputComponent {
   @Input() type: string = '';
   @Input() name: string = '';
   @Input() id: string = '';
+  @Input() required: boolean = false;
 }
