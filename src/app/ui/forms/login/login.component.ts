@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TitleComponent } from '../../elements/title/title.component';
 import { ButtonComponent } from '../../elements/button/button.component';
 import { LabelComponent } from '../../elements/label/label.component';
@@ -8,6 +8,7 @@ import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 
 @Component({
@@ -23,7 +24,7 @@ import {
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   @Output() login = new EventEmitter();
 
   form: FormGroup = new FormGroup({
@@ -31,8 +32,22 @@ export class LoginComponent {
     password: new FormControl(''),
   });
 
+  constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
+  }
+
   sendInfo($event: SubmitEvent) {
     $event.preventDefault();
+    if (this.form.invalid) {
+      alert('Please fill in the form correctly');
+      return;
+    }
+
     this.login.emit(this.form.getRawValue());
   }
 }
