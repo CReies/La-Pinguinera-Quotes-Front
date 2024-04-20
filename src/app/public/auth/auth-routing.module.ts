@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutAuthComponent } from '../../ui/layouts/layout-auth/layout-auth.component';
-import { authGuard } from './auth.guard';
 import { LoginContainerComponent } from '../../containers/login-container/login-container.component';
 import { RegisterContainerComponent } from '../../containers/register-container/register-container.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
     children: [
       { path: '', component: RegisterContainerComponent, outlet: 'auth-form' },
     ],
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: '**',
