@@ -22,7 +22,7 @@ export class BooksContainerComponent implements OnInit, OnDestroy {
     this.initializeSubscriptions();
   }
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    this.facade.destroySubscriptions();
   }
 
   private initializeSubscriptions(): void {
