@@ -3,4 +3,12 @@
   <span>{{book.author}}</span>
   <span>{{book.price}}</span>
   <span>{{book.type}}</span>
+  @switch (renderAs) {
+  @case ("list") {
+  <button>+</button>
+  <button>-</button>
+  }@case ("added") {
+  <span>x{{quantity}}</span>
+  }
+  }
 </li>
