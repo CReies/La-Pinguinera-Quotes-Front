@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { privateGuard } from './private.guard';
 import { BooksContainerComponent } from '../containers/books-container/books-container.component';
+import { AddBookContainerComponent } from '../containers/add-book-container/add-book-container.component';
+import { LayoutAddBookComponent } from '../ui/layouts/layout-add-book/layout-add-book.component';
+import { BookDisplayContainerComponent } from '../containers/book-display-container/book-display-container.component';
 
 const routes: Routes = [
   {
@@ -15,8 +18,20 @@ const routes: Routes = [
   },
   {
     path: 'create-book',
-    component: LayoutMainComponent,
+    component: LayoutAddBookComponent,
     canActivate: [privateGuard],
+    children: [
+      {
+        path: '',
+        component: AddBookContainerComponent,
+        outlet: 'add-book-form',
+      },
+      {
+        path: '',
+        component: BookDisplayContainerComponent,
+        outlet: 'book-display',
+      },
+    ],
   },
   {
     path: 'list',
