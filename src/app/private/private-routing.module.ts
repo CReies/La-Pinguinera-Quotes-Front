@@ -10,6 +10,9 @@ import { LayoutListComponent } from '../ui/layouts/layout-list/layout-list.compo
 import { ListAllBooksContainerComponent } from '../containers/list-all-books-container/list-all-books-container.component';
 import { ListAddedBooksContainerComponent } from '../containers/list-added-books-container/list-added-books-container.component';
 import { ListQuotedBooksContainerComponent } from '../containers/list-quoted-books-container/list-quoted-books-container.component';
+import { BudgetListAllContainerComponent } from '../containers/budget-list-all-container/budget-list-all-container.component';
+import { BudgetListAddedContainerComponent } from '../containers/budget-list-added-container/budget-list-added-container.component';
+import { BudgetListQuotedContainerComponent } from '../containers/budget-list-quoted-container/budget-list-quoted-container.component';
 
 const routes: Routes = [
   {
@@ -61,8 +64,25 @@ const routes: Routes = [
   },
   {
     path: 'budget',
-    component: LayoutMainComponent,
+    component: LayoutListComponent,
     canActivate: [privateGuard],
+    children: [
+      {
+        path: '',
+        component: BudgetListAllContainerComponent,
+        outlet: 'list-all',
+      },
+      {
+        path: '',
+        component: BudgetListAddedContainerComponent,
+        outlet: 'list-added',
+      },
+      {
+        path: '',
+        component: BudgetListQuotedContainerComponent,
+        outlet: 'list-quoted',
+      },
+    ],
   },
   {
     path: '**',
