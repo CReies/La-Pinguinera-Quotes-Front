@@ -10,7 +10,6 @@ import { AsyncPipe } from '@angular/common';
   standalone: true,
   imports: [HomeBooksComponent, AsyncPipe],
   templateUrl: './books-container.component.html',
-  styles: ``,
 })
 export class BooksContainerComponent implements OnInit, OnDestroy {
   public books$: Observable<IBook[]>;
