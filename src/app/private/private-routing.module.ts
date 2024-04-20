@@ -1,7 +1,7 @@
 import { LayoutMainComponent } from './../ui/layouts/layout-main/layout-main.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { privateGuard } from './private.guard';
+import { PrivateGuard } from './private.guard';
 import { BooksContainerComponent } from '../containers/books-container/books-container.component';
 import { AddBookContainerComponent } from '../containers/add-book-container/add-book-container.component';
 import { LayoutAddBookComponent } from '../ui/layouts/layout-add-book/layout-add-book.component';
@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: LayoutMainComponent,
-    canActivate: [privateGuard],
+    canActivate: [PrivateGuard],
     children: [
       { path: '', component: BooksContainerComponent, outlet: 'main' },
     ],
@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: 'create-book',
     component: LayoutAddBookComponent,
-    canActivate: [privateGuard],
+    canActivate: [PrivateGuard],
     children: [
       {
         path: '',
@@ -43,7 +43,7 @@ const routes: Routes = [
   {
     path: 'list',
     component: LayoutListComponent,
-    canActivate: [privateGuard],
+    canActivate: [PrivateGuard],
     children: [
       {
         path: '',
@@ -65,7 +65,7 @@ const routes: Routes = [
   {
     path: 'budget',
     component: LayoutListComponent,
-    canActivate: [privateGuard],
+    canActivate: [PrivateGuard],
     children: [
       {
         path: '',
