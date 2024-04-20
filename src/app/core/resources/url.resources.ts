@@ -8,4 +8,7 @@ export const URL_RESOURCES = {
   books: {
     getAll: `${environment.apiUrl}/books`,
   },
+  token: {
+    verify: `${environment.apiUrl}/token/verify`,
+  },
 };

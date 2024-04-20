@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       { path: '', component: LoginContainerComponent, outlet: 'auth-form' },
     ],
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'register',
