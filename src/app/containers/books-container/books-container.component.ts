@@ -1,57 +1,31 @@
-import { Component } from '@angular/core';
-import { BookCardComponent } from '../../ui/blocks/book-card/book-card.component';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IBook } from '../../core/models/book.model';
+import { Observable } from 'rxjs';
+import { BooksContainerFacade } from './books-container.facade';
+import { HomeBooksComponent } from '../../ui/blocks/home-books/home-books.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-books-container',
   standalone: true,
-  imports: [BookCardComponent],
+  imports: [HomeBooksComponent, AsyncPipe],
   templateUrl: './books-container.component.html',
-  styles: ``,
 })
-export class BooksContainerComponent {
-  books: IBook[] = [
-    {
-      title: 'The Hobbit',
-      author: 'J.R.R. Tolkien',
-      price: 10,
-      type: 'Novel',
-    },
-    {
-      title: 'The Hobbit',
-      author: 'J.R.R. Tolkien',
-      price: 10,
-      type: 'Novel',
-    },
-    {
-      title: 'The Hobbit',
-      author: 'J.R.R. Tolkien',
-      price: 10,
-      type: 'Novel',
-    },
-    {
-      title: 'The Hobbit',
-      author: 'J.R.R. Tolkien',
-      price: 10,
-      type: 'Novel',
-    },
-    {
-      title: 'The Hobbit',
-      author: 'J.R.R. Tolkien',
-      price: 10,
-      type: 'Novel',
-    },
-    {
-      title: 'The Hobbit',
-      author: 'J.R.R. Tolkien',
-      price: 10,
-      type: 'Novel',
-    },
-    {
-      title: 'The Hobbit',
-      author: 'J.R.R. Tolkien',
-      price: 10,
-      type: 'Novel',
-    },
-  ];
+export class BooksContainerComponent implements OnInit, OnDestroy {
+  public books$: Observable<IBook[]>;
+
+  constructor(private readonly facade: BooksContainerFacade) {}
+
+  ngOnInit(): void {
+    this.facade.initSubscriptions();
+    this.facade.getBooks();
+    this.initializeSubscriptions();
+  }
+  ngOnDestroy(): void {
+    this.facade.destroySubscriptions();
+  }
+
+  private initializeSubscriptions(): void {
+    this.books$ = this.facade.books$();
+  }
 }

@@ -2,7 +2,7 @@
   <app-title title="Added books" titleType="h2" />
   <ul>
     @for (book of books; track $index) {
-    <app-book-list-element [book]="book" />
+    <app-book-list-element [book]="book" renderAs="added" [quantity]=10 />
     }
   </ul>
 </section>

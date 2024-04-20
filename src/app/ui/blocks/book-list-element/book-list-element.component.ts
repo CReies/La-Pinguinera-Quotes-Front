@@ -10,4 +10,6 @@ import { IBook } from '../../../core/models/book.model';
 })
 export class BookListElementComponent {
   @Input() book: IBook;
+  @Input() renderAs: 'list' | 'added' ;
+  @Input() quantity: number;
 }
