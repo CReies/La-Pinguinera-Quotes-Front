@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subscription, tap } from 'rxjs';
+import { Subscription, tap } from 'rxjs';
 import { AuthService } from '../../core/services/auth.service';
 import { AppState } from '../../core/state/app.state';
 
