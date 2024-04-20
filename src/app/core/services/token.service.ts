@@ -15,7 +15,7 @@ export class TokenService {
   ) {}
 
   verifyToken(): Observable<IVerifyTokenResponseModel> {
-    const url = URL_RESOURCES.verifyToken;
+    const url = URL_RESOURCES.token.verify;
     const result = this.httpService
       .get<IVerifyTokenResponseModel>(url)
       .pipe(map((response) => this.mapper.map(response)));

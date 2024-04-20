@@ -10,6 +10,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private route: Router) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -42,7 +43,6 @@ export class LoginComponent implements OnInit {
   }
 
   sendInfo($event: SubmitEvent) {
-    $event.preventDefault();
     if (this.form.invalid) {
       alert('Please fill in the form correctly');
       return;
