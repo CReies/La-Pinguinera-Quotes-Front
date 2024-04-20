@@ -2,12 +2,16 @@ import { LayoutMainComponent } from './../ui/layouts/layout-main/layout-main.com
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { privateGuard } from './private.guard';
+import { BooksContainerComponent } from '../containers/books-container/books-container.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: LayoutMainComponent,
     canActivate: [privateGuard],
+    children: [
+      { path: '', component: BooksContainerComponent, outlet: 'main' },
+    ],
   },
   {
     path: 'create-book',
