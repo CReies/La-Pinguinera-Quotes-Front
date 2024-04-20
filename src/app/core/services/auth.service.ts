@@ -17,7 +17,7 @@ export class AuthService {
   ) {}
 
   login(formData): Observable<IAuthResponseModel> {
-    const url = URL_RESOURCES.login;
+    const url = URL_RESOURCES.auth.login;
     const result = this.httpService
       .post<IAuthResponseModel>(url, formData)
       .pipe(
@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   register(formData): Observable<IAuthResponseModel> {
-    const url = URL_RESOURCES.register;
+    const url = URL_RESOURCES.auth.register;
     const result = this.httpService
       .post<IAuthResponseModel>(url, formData)
       .pipe(

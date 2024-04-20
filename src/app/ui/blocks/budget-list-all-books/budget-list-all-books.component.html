@@ -1,0 +1,8 @@
+<section>
+  <app-title title="All the books" titleType="h2" />
+  <ul>
+    @for (book of books; track $index) {
+    <app-book-list-element [book]="book" renderAs="list" />
+    }
+  </ul>
+</section>

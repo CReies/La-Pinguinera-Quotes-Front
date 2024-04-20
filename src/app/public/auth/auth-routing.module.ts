@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       { path: '', component: LoginContainerComponent, outlet: 'auth-form' },
     ],
-    canActivate: [AuthGuard],
+    canActivate: [authGuard],
   },
   {
     path: 'register',
@@ -21,6 +21,10 @@ const routes: Routes = [
       { path: '', component: RegisterContainerComponent, outlet: 'auth-form' },
     ],
     canActivate: [AuthGuard],
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
   },
 ];
 
