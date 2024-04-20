@@ -2,10 +2,7 @@ export interface IBook {
   title: string;
   author: string;
   price: number;
-  type;
+  type :BookType;
 }
 
-enum BookType {
-  Book,
-  Novel,
-}
+type BookType = "Book"  | "Novel"
