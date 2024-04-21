@@ -1,1 +1,6 @@
-<app-add-book />
+<section>
+  <app-add-book (addBook)="createBook($event)" />
+  @if(book$ | async; as book){
+  <app-book-card [book]="book" />
+  }
+</section>
