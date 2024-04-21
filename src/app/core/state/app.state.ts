@@ -1,4 +1,5 @@
 import { BooksState } from './books.state';
+import { CreateBookState } from './create-book.state';
 import { UserState } from './user.state';
 import { Injectable } from '@angular/core';
 
@@ -6,7 +7,8 @@ import { Injectable } from '@angular/core';
 export class AppState {
   constructor(
     private readonly userState: UserState,
-    private readonly booksState: BooksState
+    private readonly booksState: BooksState,
+    private readonly createdBookState: CreateBookState
   ) {}
 
   get user() {
@@ -15,5 +17,9 @@ export class AppState {
 
   get books() {
     return this.booksState.store();
+  }
+
+  get createdBook() {
+    return this.createdBookState.store();
   }
 }

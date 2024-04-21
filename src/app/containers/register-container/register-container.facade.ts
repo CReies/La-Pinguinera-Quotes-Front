@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../../core/services/auth.service';
 import { AppState } from './../../core/state/app.state';
 import { Injectable } from '@angular/core';
@@ -9,7 +10,8 @@ export class RegisterContainerFacade {
 
   constructor(
     private readonly appState: AppState,
-    private readonly authService: AuthService
+    private readonly authService: AuthService,
+    private readonly router: Router
   ) {}
 
   initSubscriptions(): void {
@@ -24,7 +26,7 @@ export class RegisterContainerFacade {
     this.subscriptions.add(
       this.authService
         .register(formData)
-        .pipe(tap(this.appState.user.currentUser.set.bind(this)))
+        .pipe(tap(this.appState.user.currentUser.set.bind(this)), tap(()=> this.router.navigate(['/quotes/home'])))
         .subscribe()
     );
   }

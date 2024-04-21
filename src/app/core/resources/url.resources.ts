@@ -11,4 +11,7 @@ export const URL_RESOURCES = {
   token: {
     verify: `${environment.apiUrl}/token/verify`,
   },
+  quote: {
+    create: `${environment.apiUrl}/quote/CalculateIndividualPrice`,
+  },
 };

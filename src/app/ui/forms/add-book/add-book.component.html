@@ -1,24 +1,25 @@
-<form>
-  <fieldset>
+<form (submit)="sendInfo($event)">
+  <fieldset [formGroup]="form">
     <legend>Add book</legend>
     <section class='form-group'>
       <app-label text='Title' for='title' />
-      <input id="title" name="title" type="text" required />
+      <input id="title" name="title" type="text" required formControlName="title" />
     </section>
     <section class='form-group'>
       <app-label text='Author' for='author' />
-      <input id="author" name="author" type="text" required />
+      <input id="author" name="author" type="text" required formControlName="author" />
     </section>
     <section class='form-group'>
       <app-label text='Price' for='price' />
-      <input id="price" name="price" type="number" required />
+      <input id="price" name="price" type="number" required formControlName="price" />
     </section>
     <section class='form-group'>
       <app-label text='Type' for='type' />
-      <select name="type" id="type">
+      <select name="type" id="type" formControlName="type">
         <option value="Book">Book</option>
         <option value="Novel">Novel</option>
       </select>
     </section>
+    <app-button text="Create" />
   </fieldset>
 </form>
