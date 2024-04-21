@@ -35,4 +35,37 @@ export class ListQuoteContainerFacade {
         .subscribe()
     );
   }
+
+  addBook(book: IBook) {
+    let listCartState = this.appState.listCart.books.snapshot();
+    let bookWithQuantity = listCartState.find(
+      (element) => element.id === book.id
+    );
+    if (bookWithQuantity) {
+      bookWithQuantity.quantity += 1;
+    } else {
+      listCartState.push({ ...book, quantity: 1 });
+    }
+
+    this.appState.listCart.books.set(listCartState);
+  }
+
+  removeBook(book: IBook) {
+    let listCartState = this.appState.listCart.books.snapshot();
+    let bookWithQuantity = listCartState.find(
+      (element) => element.id === book.id
+    );
+
+    if (!bookWithQuantity) return;
+
+    if (bookWithQuantity.quantity === 1) {
+      listCartState = listCartState.filter(
+        (element) => element.id !== bookWithQuantity.id
+      );
+    } else {
+      bookWithQuantity.quantity -= 1;
+    }
+
+    this.appState.listCart.books.set(listCartState);
+  }
 }

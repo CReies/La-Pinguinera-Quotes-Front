@@ -35,4 +35,12 @@ export class ListQuoteContainerComponent implements OnInit, OnDestroy {
   private initializeSubscriptions(): void {
     this.books$ = this.facade.books$();
   }
+
+  addBook(book: IBook): void {
+    this.facade.addBook(book);
+  }
+
+  removeBook(book: IBook): void {
+    this.facade.removeBook(book);
+  }
 }
