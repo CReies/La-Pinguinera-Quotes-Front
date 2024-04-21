@@ -7,7 +7,7 @@ import { IBook } from '../../core/models/book.model';
 @Injectable({
   providedIn: 'root',
 })
-export class ListAllBooksContainerFacade {
+export class ListQuoteContainerFacade {
   private subscriptions: Subscription;
 
   constructor(
