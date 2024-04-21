@@ -20,6 +20,7 @@ import { BudgetQuotedBooksComponent } from '../../ui/blocks/budget-quoted-books/
 })
 export class BudgetQuoteContainerComponent implements OnInit, OnDestroy {
   public books$: Observable<IBook[]>;
+  public cartBudget$: Observable<IBook[]>;
 
   constructor(private readonly facade: BudgetQuoteContainerFacade) {}
 
@@ -34,5 +35,14 @@ export class BudgetQuoteContainerComponent implements OnInit, OnDestroy {
 
   private initializeSubscriptions(): void {
     this.books$ = this.facade.books$();
+    this.cartBudget$ = this.facade.budgetCart$();
+  }
+
+  addBook(book: IBook): void {
+    this.facade.addBook(book);
+  }
+
+  removeBook(book: IBook): void {
+    this.facade.removeBook(book);
   }
 }
