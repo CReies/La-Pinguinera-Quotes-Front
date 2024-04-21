@@ -46,4 +46,8 @@ export class ListQuoteContainerComponent implements OnInit, OnDestroy {
   removeBook(book: IBook): void {
     this.facade.removeBook(book);
   }
+
+  quote(): void {
+    this.facade.quote();
+  }
 }

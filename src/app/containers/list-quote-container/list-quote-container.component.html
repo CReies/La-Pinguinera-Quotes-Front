@@ -1,3 +1,4 @@
 <app-list-all-books [books]="books$ | async" (addBook)="addBook($event)" (removeBook)="removeBook($event)" />
 <app-list-added-books [books]="cartList$ |async" />
+<button (click)="quote()">Quote</button>
 <app-list-quoted-books />

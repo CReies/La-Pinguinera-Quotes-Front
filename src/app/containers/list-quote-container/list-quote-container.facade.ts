@@ -4,6 +4,7 @@ import { AppState } from '../../core/state/app.state';
 import { BooksService } from '../../core/services/books.service';
 import { IBook } from '../../core/models/book.model';
 import { IBookWithQuantity } from '../../core/models/book-with-quantity.model';
+import { QuoteListService } from '../../core/services/quote.list.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,8 @@ export class ListQuoteContainerFacade {
 
   constructor(
     private readonly appState: AppState,
-    private readonly booksService: BooksService
+    private readonly booksService: BooksService,
+    private readonly quoteListService: QuoteListService
   ) {}
 
   books$(): Observable<IBook[]> {
@@ -72,5 +74,16 @@ export class ListQuoteContainerFacade {
     }
 
     this.appState.listCart.books.set(listCartState);
+  }
+
+  quote() {
+    let listCartState = this.appState.listCart.books.snapshot();
+
+    this.subscriptions.add(
+      this.quoteListService
+        .list(listCartState)
+        .pipe(tap(this.appState.listCart.books.set.bind(this)))
+        .subscribe()
+    );
   }
 }

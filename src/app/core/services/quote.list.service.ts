@@ -4,6 +4,8 @@ import { Observable, map } from 'rxjs';
 import { URL_RESOURCES } from '../resources/url.resources';
 import { IListQuoteResponse } from '../models/list-quote-response.model';
 import { ApiToListQuoteResponseMapper } from '../mappers/api-to-list-quote-response.mapper';
+import { IBookWithQuantity } from '../models/book-with-quantity.model';
+import { ListQuoteToApiMapper } from '../mappers/list-quote-to-api.mapper';
 
 @Injectable({
   providedIn: 'root',
@@ -11,16 +13,21 @@ import { ApiToListQuoteResponseMapper } from '../mappers/api-to-list-quote-respo
 export class QuoteListService {
   constructor(
     private readonly httpService: HttpService,
-    private readonly mapper: ApiToListQuoteResponseMapper
+    private readonly requestMapper: ListQuoteToApiMapper,
+    private readonly responseMapper: ApiToListQuoteResponseMapper
   ) {}
 
-  list(data): Observable<IListQuoteResponse> {
+  list(data: IBookWithQuantity[]): Observable<IListQuoteResponse> {
     const url = URL_RESOURCES.quote.list;
-    const result = this.httpService.post<IListQuoteResponse>(url, data).pipe(
-      map((response) => {
-        return this.mapper.map(response);
-      })
-    );
+    const parsedData = this.requestMapper.map(data);
+
+    const result = this.httpService
+      .post<IListQuoteResponse>(url, parsedData)
+      .pipe(
+        map((response) => {
+          return this.responseMapper.map(response);
+        })
+      );
 
     return result;
   }
