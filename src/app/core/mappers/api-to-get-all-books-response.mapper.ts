@@ -6,6 +6,7 @@ export class ApiToGetAllAllBooksMapper {
   map(payload: any[]): IBook[] {
     return payload.map((element) => {
       return {
+        id: element.id,
         title: element.title,
         author: element.author,
         price: element.price,

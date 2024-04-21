@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IBook } from '../../../core/models/book.model';
 
 @Component({
@@ -10,6 +10,17 @@ import { IBook } from '../../../core/models/book.model';
 })
 export class BookListElementComponent {
   @Input() book: IBook;
-  @Input() renderAs: 'list' | 'added' ;
+  @Input() renderAs: 'list' | 'added';
   @Input() quantity: number;
+
+  @Output() addBook = new EventEmitter<IBook>();
+  @Output() removeBook = new EventEmitter<IBook>();
+
+  onAddBook(): void {
+    this.addBook.emit(this.book);
+  }
+
+  onRemoveBook(): void {
+    this.removeBook.emit(this.book);
+  }
 }

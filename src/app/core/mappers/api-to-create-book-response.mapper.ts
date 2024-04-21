@@ -7,6 +7,7 @@ export class ApiToCreateBookResponseMapper {
     const typeArray: IBook['type'][] = ['Book', 'Novel'];
     const type: IBook['type'] = typeArray[payload.type];
     return {
+      id: payload.id,
       title: payload.title,
       author: payload.author,
       price: payload.sellPrice,

@@ -13,5 +13,6 @@ export const URL_RESOURCES = {
   },
   quote: {
     create: `${environment.apiUrl}/quote/CalculateIndividualPrice`,
+    list: `${environment.apiUrl}/quote/CalculateTotalListPrice`,
   },
 };

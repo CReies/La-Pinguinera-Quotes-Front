@@ -1,8 +1,9 @@
 <section>
   <app-title title="Quoted books" titleType="h2" />
   <ul>
-    @for (book of books; track $index) {
+    @for (book of quoteData.books; track $index) {
     <app-book-list-element [book]="book" />
     }
   </ul>
+  <span>Total price: {{quoteData.totalPrice}}</span>
 </section>

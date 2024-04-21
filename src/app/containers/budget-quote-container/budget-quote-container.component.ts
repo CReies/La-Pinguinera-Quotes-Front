@@ -3,18 +3,25 @@ import { IBook } from '../../core/models/book.model';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { ListAllBooksComponent } from '../../ui/blocks/list-all-books/list-all-books.component';
-import { ListAllBooksContainerFacade } from './list-all-books-container.facade';
+import { ListAddedBooksComponent } from '../../ui/blocks/list-added-books/list-added-books.component';
+import { ListQuotedBooksComponent } from '../../ui/blocks/list-quoted-books/list-quoted-books.component';
+import { BudgetQuoteContainerFacade } from './budget-quote-container.facade';
 
 @Component({
-  selector: 'app-list-all-books-container',
+  selector: 'app-budget-quote-container',
   standalone: true,
-  imports: [ListAllBooksComponent, AsyncPipe],
-  templateUrl: './list-all-books-container.component.html',
+  imports: [
+    ListAllBooksComponent,
+    ListAddedBooksComponent,
+    ListQuotedBooksComponent,
+    AsyncPipe,
+  ],
+  templateUrl: './budget-quote-container.component.html',
 })
-export class ListAllBooksContainerComponent implements OnInit, OnDestroy {
+export class BudgetQuoteContainerComponent implements OnInit, OnDestroy {
   public books$: Observable<IBook[]>;
 
-  constructor(private readonly facade: ListAllBooksContainerFacade) {}
+  constructor(private readonly facade: BudgetQuoteContainerFacade) {}
 
   ngOnInit(): void {
     this.facade.initSubscriptions();
