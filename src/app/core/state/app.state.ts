@@ -3,6 +3,7 @@ import { BooksState } from './books.state';
 import { CreateBookState } from './create-book.state';
 import { UserState } from './user.state';
 import { Injectable } from '@angular/core';
+import { QuoteListDataState } from './quote-list-data.state';
 
 @Injectable({ providedIn: 'root' })
 export class AppState {
@@ -10,7 +11,8 @@ export class AppState {
     private readonly userState: UserState,
     private readonly booksState: BooksState,
     private readonly createdBookState: CreateBookState,
-    private readonly listCartState: ListCartState
+    private readonly listCartState: ListCartState,
+    private readonly quoteListDataState: QuoteListDataState
   ) {}
 
   get user() {
@@ -25,7 +27,11 @@ export class AppState {
     return this.createdBookState.store();
   }
 
-  get listCart(){
+  get listCart() {
     return this.listCartState.store();
+  }
+
+  get quoteListData() {
+    return this.quoteListDataState.store();
   }
 }
