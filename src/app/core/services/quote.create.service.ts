@@ -15,7 +15,6 @@ export class QuoteCreateService {
   ) {}
 
   create(data): Observable<IBook> {
-    console.log(data);
     const url = URL_RESOURCES.quote.create;
     const result = this.httpService.post<IBook>(url, data).pipe(
       map((response) => {
