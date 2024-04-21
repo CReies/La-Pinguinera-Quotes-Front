@@ -6,6 +6,7 @@ import { ListAllBooksComponent } from '../../ui/blocks/list-all-books/list-all-b
 import { ListAddedBooksComponent } from '../../ui/blocks/list-added-books/list-added-books.component';
 import { ListQuotedBooksComponent } from '../../ui/blocks/list-quoted-books/list-quoted-books.component';
 import { ListQuoteContainerFacade } from './list-quote-container.facade';
+import { IBookWithQuantity } from '../../core/models/book-with-quantity.model';
 
 @Component({
   selector: 'app-list-quote-container',
@@ -20,6 +21,7 @@ import { ListQuoteContainerFacade } from './list-quote-container.facade';
 })
 export class ListQuoteContainerComponent implements OnInit, OnDestroy {
   public books$: Observable<IBook[]>;
+  public cartList$: Observable<IBookWithQuantity[]>;
 
   constructor(private readonly facade: ListQuoteContainerFacade) {}
 
@@ -34,6 +36,7 @@ export class ListQuoteContainerComponent implements OnInit, OnDestroy {
 
   private initializeSubscriptions(): void {
     this.books$ = this.facade.books$();
+    this.cartList$ = this.facade.cartList$();
   }
 
   addBook(book: IBook): void {

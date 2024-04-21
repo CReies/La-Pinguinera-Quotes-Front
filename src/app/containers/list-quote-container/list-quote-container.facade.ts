@@ -3,6 +3,7 @@ import { Observable, Subscription, tap } from 'rxjs';
 import { AppState } from '../../core/state/app.state';
 import { BooksService } from '../../core/services/books.service';
 import { IBook } from '../../core/models/book.model';
+import { IBookWithQuantity } from '../../core/models/book-with-quantity.model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +18,10 @@ export class ListQuoteContainerFacade {
 
   books$(): Observable<IBook[]> {
     return this.appState.books.books.$();
+  }
+
+  cartList$(): Observable<IBookWithQuantity[]> {
+    return this.appState.listCart.books.$();
   }
 
   initSubscriptions(): void {
