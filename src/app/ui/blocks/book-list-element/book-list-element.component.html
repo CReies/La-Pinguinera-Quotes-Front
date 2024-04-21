@@ -5,8 +5,8 @@
   <span>{{book.type}}</span>
   @switch (renderAs) {
   @case ("list") {
-  <button>+</button>
-  <button>-</button>
+  <button (click)="onAddBook()">+</button>
+  <button (click)="onRemoveBook()">-</button>
   }@case ("added") {
   <span>x{{quantity}}</span>
   }
