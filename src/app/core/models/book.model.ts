@@ -5,4 +5,4 @@ export interface IBook {
   type: BookType;
 }
 
-type BookType = 'Book' | 'Novel';
+type BookType = 'Book' | 'Novel' | 0 | 1; // 0 and 1 are used to represent the types in the database
