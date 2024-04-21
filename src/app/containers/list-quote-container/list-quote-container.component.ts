@@ -1,3 +1,4 @@
+import { IListQuoteResponse } from './../../core/models/list-quote-response.model';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IBook } from '../../core/models/book.model';
 import { Observable } from 'rxjs';
@@ -22,6 +23,7 @@ import { IBookWithQuantity } from '../../core/models/book-with-quantity.model';
 export class ListQuoteContainerComponent implements OnInit, OnDestroy {
   public books$: Observable<IBook[]>;
   public cartList$: Observable<IBookWithQuantity[]>;
+  public quoteData$: Observable<IListQuoteResponse>;
 
   constructor(private readonly facade: ListQuoteContainerFacade) {}
 
@@ -37,6 +39,7 @@ export class ListQuoteContainerComponent implements OnInit, OnDestroy {
   private initializeSubscriptions(): void {
     this.books$ = this.facade.books$();
     this.cartList$ = this.facade.cartList$();
+    this.quoteData$ = this.facade.quoteData$();
   }
 
   addBook(book: IBook): void {
