@@ -8,7 +8,7 @@ import { ListQuotedBooksComponent } from '../../ui/blocks/list-quoted-books/list
 import { BudgetQuoteContainerFacade } from './budget-quote-container.facade';
 
 @Component({
-  selector: 'app-list-quote-container',
+  selector: 'app-budget-quote-container',
   standalone: true,
   imports: [
     ListAllBooksComponent,
