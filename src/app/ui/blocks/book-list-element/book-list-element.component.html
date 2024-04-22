@@ -1,14 +1,27 @@
-<li>
-  <span>{{book.title}}</span>
-  <span>{{book.author}}</span>
-  <span>{{book.price}}</span>
-  <span>{{book.type}}</span>
+<li class="book">
+  <header class="book__header">
+    <span class="book__title">
+      {{book.title}}
+      @if (renderAs === "added"){
+      <span>x{{quantity}}</span>
+      }
+    </span>
+  </header>
+  <main class="book__details">
+    @if (renderAs === "added"){
+    <span class="book__price">${{book.price * quantity}}</span>
+    } @else {
+    <span class="book__price">${{book.price}}</span>
+    }
+    <span class="book__type">{{book.type}}</span>
+
+  </main>
   @switch (renderAs) {
   @case ("list") {
-  <button (click)="onAddBook()">+</button>
-  <button (click)="onRemoveBook()">-</button>
-  }@case ("added") {
-  <span>x{{quantity}}</span>
+  <section class="book__buttons">
+    <button (click)="onAddBook()" class="book__button">+</button>
+    <button (click)="onRemoveBook()" class="book__button">-</button>
+  </section>
   }
   }
 </li>

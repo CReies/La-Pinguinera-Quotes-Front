@@ -11,7 +11,7 @@ import { IBook } from '../../../core/models/book.model';
 export class BookListElementComponent {
   @Input() book: IBook;
   @Input() renderAs: 'list' | 'added';
-  @Input() quantity: number;
+  @Input() quantity: number = 1;
 
   @Output() addBook = new EventEmitter<IBook>();
   @Output() removeBook = new EventEmitter<IBook>();
