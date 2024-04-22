@@ -14,7 +14,7 @@ import {
   standalone: true,
   imports: [ButtonComponent, LabelComponent, ReactiveFormsModule],
   templateUrl: './send-budget-data.component.html',
-  styleUrl: './send-budget-data.component.css',
+  styleUrls: ['./send-budget-data.component.css', '../../styles/auth-form.css'],
 })
 export class SendBudgetDataComponent {
   @Output() sendBudgetData = new EventEmitter();

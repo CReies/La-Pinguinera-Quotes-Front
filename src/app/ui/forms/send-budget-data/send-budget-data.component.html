@@ -1,10 +1,10 @@
-<form (submit)="sendInfo($event)">
-  <fieldset [formGroup]="form">
-    <legend>Quote</legend>
-    <section class='form-group'>
+<form (submit)="sendInfo($event)" class="form">
+  <fieldset [formGroup]="form" class="form__fieldset">
+    <legend class="form__legend">Quote</legend>
+    <section class='form__group'>
       <app-label text='Budget' for='budget' />
-      <input type="text" name="budget" id="budget" required formControlName="budget" />
+      <input type="text" name="budget" id="budget" required formControlName="budget" class="form__input" />
     </section>
-    <app-button text="Quote" />
+    <app-button text="Quote" class="form__submit" />
   </fieldset>
 </form>
