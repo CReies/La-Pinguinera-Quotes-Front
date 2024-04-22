@@ -9,9 +9,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrl: './svg.component.css',
 })
 export class SvgComponent implements OnChanges {
-  @Input()
-  public name?: string;
-  public svgIcon: any;
+  @Input() name: string;
+
+  svgIcon: any;
 
   constructor(
     private httpClient: HttpClient,
@@ -24,7 +24,7 @@ export class SvgComponent implements OnChanges {
       return;
     }
     this.httpClient
-      .get(`assets/images/svg/${this.name}.svg`, { responseType: 'text' })
+      .get(`/assets/svg/${this.name}.svg`, { responseType: 'text' })
       .subscribe((value) => {
         this.svgIcon = this.sanitizer.bypassSecurityTrustHtml(value);
       });
