@@ -1,3 +1,6 @@
-<app-list-all-books [books]="books$ | async" />
-<app-list-added-books />
-<app-list-quoted-books />
+<app-budget-all-books [books]="books$ | async" (addBook)="addBook($event)" (removeBook)="removeBook($event)" />
+<app-budget-added-books [books]="cartBudget$ | async" />
+<app-send-budget-data (sendBudgetData)="quote($event)" />
+@if (quoteData$ | async; as quoteData){
+<app-budget-quoted-books [data]="quoteData" />
+}

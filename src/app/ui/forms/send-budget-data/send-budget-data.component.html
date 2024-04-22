@@ -1,0 +1,10 @@
+<form (submit)="sendInfo($event)">
+  <fieldset [formGroup]="form">
+    <legend>Quote</legend>
+    <section class='form-group'>
+      <app-label text='Budget' for='budget' />
+      <input type="text" name="budget" id="budget" required formControlName="budget" />
+    </section>
+    <app-button text="Quote" />
+  </fieldset>
+</form>
