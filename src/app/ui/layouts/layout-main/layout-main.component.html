@@ -1,6 +1,10 @@
-<app-header-container />
-<app-aside-container />
-<main>
-  <router-outlet name='main' />
-</main>
-<app-footer-container />
+<section class="body">
+  <app-header-container class="body__header" />
+  <main class="body__main">
+    <section class="body__main-router">
+      <router-outlet name='main' />
+      <app-footer-container class="body__footer" />
+    </section>
+    <app-aside-container class="body__aside" />
+  </main>
+</section>
