@@ -1,12 +1,14 @@
 <footer class="footer">
-  <span>
-    © 2024 Cristian Reyes
-  </span>
-  <section class="footer__social-media">
-    <ul>
-      @for (socialLink of socialLinks; track $index) {
-      <app-social-link [socialLink]="socialLink" />
-      }
-    </ul>
+  <section class="footer__container">
+    <span>
+      © 2024 Cristian Reyes
+    </span>
+    <section>
+      <ul class="footer__social-media">
+        @for (socialLink of socialLinks; track $index) {
+        <app-social-link [socialLink]="socialLink" />
+        }
+      </ul>
+    </section>
   </section>
 </footer>
