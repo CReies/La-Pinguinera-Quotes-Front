@@ -1,0 +1,47 @@
+.form {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+}
+
+.form__legend {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.form__group {
+  margin-bottom: 10px;
+}
+
+.form__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+::ng-deep .form__submit button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #de0837;
+  color: rgb(242, 214, 214);
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+::ng-deep .form__submit button:hover {
+  background-color: #c60b32;
+  color: white;
+}

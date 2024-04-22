@@ -23,7 +23,7 @@ import { Router } from '@angular/router';
     ReactiveFormsModule,
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
+  styleUrls: ['./login.component.css', '../../styles/auth-form.css'],
 })
 export class LoginComponent implements OnInit {
   @Output() login = new EventEmitter();

@@ -1,19 +1,19 @@
-<form (submit)="sendInfo($event)">
-  <fieldset [formGroup]="form">
-    <legend>Register</legend>
-    <section class='form-group'>
+<form (submit)="sendInfo($event)" class="form">
+  <fieldset [formGroup]="form" class="form__fieldset">
+    <legend class="form__legend">Register</legend>
+    <section class='form__group'>
       <app-label text='Email' for='email' />
-      <input id="email" name="email" type="email" required formControlName="email" />
+      <input id="email" name="email" type="email" required formControlName="email" class="form__input" />
     </section>
-    <section class='form-group'>
+    <section class='form__group'>
       <app-label text='Username' for='username' />
-      <input type="text" name="username" id="username" required formControlName="username" />
+      <input type="text" name="username" id="username" required formControlName="username" class="form__input" />
     </section>
-    <section class='form-group'>
+    <section class='form__group'>
       <app-label text='Password' for='password' />
-      <input id=" password" name="password" type="password" required formControlName="password" />
+      <input id=" password" name="password" type="password" required formControlName="password" class="form__input" />
     </section>
-    <app-button text="Register" />
+    <app-button text="Register" class="form__submit" />
   </fieldset>
   <p>Already have an account? <app-anchor text='Log In' href='/auth/login' /></p>
 </form>

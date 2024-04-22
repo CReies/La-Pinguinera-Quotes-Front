@@ -22,7 +22,7 @@ import {
     ReactiveFormsModule,
   ],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
+  styleUrls: ['./register.component.css', '../../styles/auth-form.css'],
 })
 export class RegisterComponent implements OnInit {
   @Output() register = new EventEmitter();
