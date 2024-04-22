@@ -1,9 +1,11 @@
 <header class="header">
   <app-title title='La Pingüinera' titleType='h1' class="header__title" />
-  @if(userData){
-  <button (click)="logout()">logout</button>
-  }
-  <button>
-    <app-svg name="{{closeMenuDisabled ? 'MenuOpen' : 'MenuClose'}}" (click)=" toggleAside()" />
-  </button>
+  <section class="header__buttons">
+    @if(userData){
+    <button (click)="logout()">logout</button>
+    }
+    <button>
+      <app-svg name="{{closeMenuDisabled ? 'MenuOpen' : 'MenuClose'}}" (click)=" toggleAside()" />
+    </button>
+  </section>
 </header>
