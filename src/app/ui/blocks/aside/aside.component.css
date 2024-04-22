@@ -1,0 +1,39 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.aside__navbar {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 40px;
+}
+
+.aside__navbar li {
+  list-style: none;
+}
+
+::ng-deep .aside__link a {
+  color: #353434;
+  text-decoration: none;
+  font-size: 2rem;
+  font-style: italic;
+  transition: 0.2s all;
+}
+
+::ng-deep .aside__link a:hover {
+  color: black;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+  ::ng-deep .aside__link a {
+    font-size: 1.5rem;
+  }
+}

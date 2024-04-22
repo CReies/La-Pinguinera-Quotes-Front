@@ -1,6 +1,11 @@
 <aside class="aside {{showAside ? 'aside--show-responsive':''}}">
-  generic aside
-  @for (link of links; track $index) {
-  <app-anchor href={{link.url}} text={{link.name}} />
-  }
+  <nav>
+    <ul class="aside__navbar">
+      @for (link of links; track $index) {
+      <li>
+        <app-anchor href={{link.url}} text={{link.name}} class="aside__link" />
+      </li>
+      }
+    </ul>
+  </nav>
 </aside>
