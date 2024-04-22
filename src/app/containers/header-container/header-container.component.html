@@ -1,1 +1,1 @@
-<app-header />
+<app-header [userData]="userData$ | async" (onLogout)="logout()" />
