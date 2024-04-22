@@ -34,4 +34,8 @@ export class HeaderContainerFacade {
     this.appState.user.currentUser.set(null);
     this.router.navigate(['/auth/login']);
   }
+
+  toggleAside(show: boolean) {
+    this.appState.showResponsiveAside.show.set(show);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AnchorComponent } from '../../elements/anchor/anchor.component';
 
 @Component({
@@ -9,6 +9,8 @@ import { AnchorComponent } from '../../elements/anchor/anchor.component';
   styleUrl: './aside.component.css',
 })
 export class AsideComponent {
+  @Input() showAside: boolean
+
   links: ILink[] = [
     {
       name: 'Home',

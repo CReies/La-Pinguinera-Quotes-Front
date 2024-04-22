@@ -29,6 +29,10 @@ export class HeaderContainerComponent implements OnInit, OnDestroy {
     this.facade.logout();
   }
 
+  toggleAside(show: boolean): void {
+    this.facade.toggleAside(show);
+  }
+
   private initializeSubscriptions(): void {
     this.userData$ = this.facade.userData$();
   }

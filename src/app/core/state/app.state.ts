@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 import { QuoteListDataState } from './quote-list-data.state';
 import { BudgetCartState } from './budget-cart.state';
 import { QuoteBudgetDataState } from './quote-budget-data.state';
+import { ShowResponsiveAsideState } from './show-responsive-aside.state';
 
 @Injectable({ providedIn: 'root' })
 export class AppState {
@@ -16,7 +17,8 @@ export class AppState {
     private readonly listCartState: ListCartState,
     private readonly quoteListDataState: QuoteListDataState,
     private readonly budgetCartState: BudgetCartState,
-    private readonly quoteBudgetDataState: QuoteBudgetDataState
+    private readonly quoteBudgetDataState: QuoteBudgetDataState,
+    private readonly showResponsiveAsideState: ShowResponsiveAsideState
   ) {}
 
   get user() {
@@ -45,5 +47,9 @@ export class AppState {
 
   get quoteBudgetData() {
     return this.quoteBudgetDataState.store();
+  }
+
+  get showResponsiveAside() {
+    return this.showResponsiveAsideState.store();
   }
 }

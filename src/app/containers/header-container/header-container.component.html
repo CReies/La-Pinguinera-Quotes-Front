@@ -1,1 +1,1 @@
-<app-header [userData]="userData$ | async" (onLogout)="logout()" />
+<app-header [userData]="userData$ | async" (onLogout)="logout()" (onShowAside)="toggleAside($event)" />
