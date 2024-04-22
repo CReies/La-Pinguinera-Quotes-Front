@@ -1,6 +1,6 @@
+import { IUser } from './user.model';
+
 export interface IAuthResponseModel {
   token: string;
-  user: IUser
+  user: IUser;
 }
-
-interface IUser { username: string; email: string };
