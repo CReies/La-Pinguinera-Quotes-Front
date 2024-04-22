@@ -1,5 +1,5 @@
-<section>
+<section class="cards-container">
   @for (book of books; track $index) {
-  <app-book-card [book]="book"></app-book-card>
-  }
+  <app-book-card [book]="book" class="cards-container__card" />
+}
 </section>

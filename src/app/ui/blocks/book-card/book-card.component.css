@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 0 10px #f0f0f0;
+  width: 300px;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 56px;
+}
+
+.card__details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.card__author {
+  overflow: hidden;
+}
