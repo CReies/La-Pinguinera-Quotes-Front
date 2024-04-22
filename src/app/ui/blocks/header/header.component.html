@@ -1,3 +1,6 @@
 <header>
-	<app-title title='La Pingüinera' titleType='h1' />
+  <app-title title='La Pingüinera' titleType='h1' />
+  @if(userData){
+  <button (click)="logout()">logout</button>
+  }
 </header>
