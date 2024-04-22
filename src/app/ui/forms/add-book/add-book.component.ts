@@ -8,14 +8,13 @@ import {
   Validators,
 } from '@angular/forms';
 import { ButtonComponent } from '../../elements/button/button.component';
-import { IBook } from '../../../core/models/book.model';
 
 @Component({
   selector: 'app-add-book',
   standalone: true,
   imports: [LabelComponent, ButtonComponent, ReactiveFormsModule],
   templateUrl: './add-book.component.html',
-  styleUrl: './add-book.component.css',
+  styleUrls: ['./add-book.component.css', '../../styles/auth-form.css'],
 })
 export class AddBookComponent implements OnInit {
   @Output() addBook = new EventEmitter();

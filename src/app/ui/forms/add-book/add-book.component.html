@@ -1,25 +1,25 @@
-<form (submit)="sendInfo($event)">
-  <fieldset [formGroup]="form">
-    <legend>Add book</legend>
-    <section class='form-group'>
+<form (submit)="sendInfo($event)" class="form">
+  <fieldset [formGroup]="form" class="form__fieldset">
+    <legend class="form__legend">Add book</legend>
+    <section class='form__group'>
       <app-label text='Title' for='title' />
-      <input id="title" name="title" type="text" required formControlName="title" />
+      <input id="title" name="title" type="text" required formControlName="title" class="form__input" />
     </section>
-    <section class='form-group'>
+    <section class='form__group'>
       <app-label text='Author' for='author' />
-      <input id="author" name="author" type="text" required formControlName="author" />
+      <input id="author" name="author" type="text" required formControlName="author" class="form__input" />
     </section>
-    <section class='form-group'>
+    <section class='form__group'>
       <app-label text='Price' for='price' />
-      <input id="price" name="price" type="number" required formControlName="price" />
+      <input id="price" name="price" type="number" required formControlName="price" class="form__input" />
     </section>
-    <section class='form-group'>
+    <section class='form__group'>
       <app-label text='Type' for='type' />
-      <select name="type" id="type" formControlName="type">
+      <select name="type" id="type" formControlName="type" class="form__input">
         <option value="Book">Book</option>
         <option value="Novel">Novel</option>
       </select>
     </section>
-    <app-button text="Create" />
+    <app-button text="Create" class="form__submit" />
   </fieldset>
 </form>
