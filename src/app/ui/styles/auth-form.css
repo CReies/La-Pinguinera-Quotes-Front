@@ -34,14 +34,14 @@
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #de0837;
-  color: rgb(242, 214, 214);
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
   font-size: 1.2em;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: 0.15s ease-in-out;
 }
 
 ::ng-deep .form__submit button:hover {
-  background-color: #c60b32;
+  background-color: var(--darkest-color);
   color: white;
 }
