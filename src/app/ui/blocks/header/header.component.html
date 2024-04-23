@@ -1,11 +1,15 @@
 <header class="header">
-  <app-title title='La Pingüinera' titleType='h1' class="header__title" />
-  <section class="header__buttons">
-    @if(userData){
-    <button (click)="logout()">logout</button>
-    }
-    <!--     <button>
-      <app-svg icon="{{closeMenuDisabled ? 'MenuOpen' : 'MenuClose'}}" (click)=" toggleAside()" />
-    </button> -->
+  <section class="header__container">
+    <a routerLink="/quotes/home" routerLinkActive="active">
+      <app-svg class="header__logo" icon="Logo" [size]=36 />
+    </a>
+    <section class="header__buttons">
+      @if(userData){
+      <button (click)="logout()">logout</button>
+      }
+      <button>
+        <app-svg icon="{{closeMenuDisabled ? 'MenuOpen' : 'MenuClose'}}" (click)=" toggleAside()" />
+      </button>
+    </section>
   </section>
 </header>
