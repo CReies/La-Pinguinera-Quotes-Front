@@ -12,18 +12,24 @@ body {
 }
 
 :root {
-  --primary-color: #42307f;
-  --secondary-color: #e1e2fe;
-  --tertiary-color: #eeefff;
-
-  --darkest-color: #281c4a;
+  --color-50: #eeefff;
+  --color-100: #e1e2fe;
+  --color-200: #c8c9fd;
+  --color-300: #a9a7fa;
+  --color-400: #8f84f5;
+  --color-500: #7d66ee;
+  --color-600: #6e4ae1;
+  --color-700: #6c4acb;
+  --color-800: #4e33a0;
+  --color-900: #42307f;
+  --color-950: #281c4a;
 }
 
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--primary-color) var(--tertiary-color);
+  scrollbar-color: var(--color-900) var(--color-50);
 }
 
 /* Chrome, Edge, and Safari */

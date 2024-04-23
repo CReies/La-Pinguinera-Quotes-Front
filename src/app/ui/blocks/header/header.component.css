@@ -1,6 +1,22 @@
 .header {
   display: flex;
   height: 100%;
+  background: var(--color-600);
+  background: -moz-linear-gradient(
+    45deg,
+    var(--color-600) 10%,
+    var(--color-400) 97%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    var(--color-600) 10%,
+    var(--color-400) 97%
+  );
+  background: linear-gradient(
+    45deg,
+    var(--color-600) 10%,
+    var(--color-400) 97%
+  );
 }
 
 .header__container {

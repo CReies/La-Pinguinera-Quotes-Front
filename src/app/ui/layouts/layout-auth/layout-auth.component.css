@@ -2,18 +2,12 @@
   display: grid;
   height: 100vh;
   grid-template-rows: 1fr 6fr 1fr;
-  background-color: var(--primary-color);
 }
 
 .body__main {
   display: grid;
-  background-color: var(--secondary-color);
 }
 
 .body__main-router {
   place-self: center;
-}
-
-.body__footer {
-  background-color: var(--tertiary-color);
 }

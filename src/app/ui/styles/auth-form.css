@@ -25,7 +25,7 @@
 .form__input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-200);
   border-radius: 5px;
 }
 
@@ -34,14 +34,37 @@
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: var(--primary-color);
-  color: var(--tertiary-color);
+  color: var(--color-50);
   font-size: 1.2em;
   cursor: pointer;
+
+  background: var(--color-600);
+  background: linear-gradient(var(--color-500) 0%, var(--color-600) 100%);
+  background: -moz-linear-gradient(var(--color-500) 0%, var(--color-600) 100%);
+  background: -webkit-linear-gradient(
+    var(--color-500) 0%,
+    var(--color-600) 100%
+  );
   transition: 0.15s ease-in-out;
 }
 
 ::ng-deep .form__submit button:hover {
-  background-color: var(--darkest-color);
   color: white;
+  background: var(--color-700);
+  background: linear-gradient(var(--color-600) 0%, var(--color-700) 100%);
+  background: -moz-linear-gradient(var(--color-600) 0%, var(--color-700) 100%);
+  background: -webkit-linear-gradient(
+    var(--color-600) 0%,
+    var(--color-700) 100%
+  );
+}
+
+::ng-deep .form__submit button:active {
+  background: var(--color-800);
+  background: linear-gradient(var(--color-700) 0%, var(--color-800) 100%);
+  background: -moz-linear-gradient(var(--color-700) 0%, var(--color-800) 100%);
+  background: -webkit-linear-gradient(
+    var(--color-700) 0%,
+    var(--color-800) 100%
+  );
 }

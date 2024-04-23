@@ -1,6 +1,6 @@
 .aside {
   height: 100%;
-  box-shadow: 0 0 1px var(--primary-color);
+  box-shadow: 0 0 1px var(--color-900);
 }
 
 .aside__navbar {
@@ -23,6 +23,6 @@
 }
 
 .aside__navbar li:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--color-100);
   font-size: 1.2rem;
 }
