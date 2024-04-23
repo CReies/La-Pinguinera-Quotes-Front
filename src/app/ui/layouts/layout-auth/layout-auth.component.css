@@ -1,7 +1,7 @@
 .body {
   display: grid;
   height: 100vh;
-  grid-template-rows: 1fr 6fr 1fr;
+  grid-template-rows: 64px 6fr 64px;
 }
 
 .body__main {
