@@ -1,29 +1,14 @@
 .body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  margin: 0;
-}
-
-.body__header {
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #de0837;
-  color: white;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 1fr 6fr 1fr;
 }
 
 .body__main {
   display: grid;
-  flex-grow: 1;
-  min-height: max-content;
+  background-color: #ffe2e4;
 }
 
 .body__main-router {
   place-self: center;
-}
-
-.body__footer {
-  padding-block: 20px;
-  color: rgb(81, 76, 76);
-  min-width: 100vw;
 }
