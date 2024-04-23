@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChildren } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -8,9 +8,9 @@ import { RouterLink } from '@angular/router';
   templateUrl: './anchor.component.html',
   styleUrl: './anchor.component.css',
 })
+@ViewChildren
 export class AnchorComponent {
   @Input() href: string = '';
-  @Input() text: string = '';
   @Input() blank: boolean = false;
 
   target: string = '';

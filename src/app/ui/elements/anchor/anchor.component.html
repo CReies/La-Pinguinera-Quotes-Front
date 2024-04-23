@@ -1,5 +1,5 @@
 @if (innerHref) {
-<a routerLink={{href}} target={{target}}>{{text}}</a>
+<a routerLink={{href}} target={{target}}><ng-content #name></ng-content></a>
 }@else{
-<a href={{href}} target={{target}}>{{text}}</a>
+<a href={{href}} target={{target}}><ng-content #name></ng-content></a>
 }
