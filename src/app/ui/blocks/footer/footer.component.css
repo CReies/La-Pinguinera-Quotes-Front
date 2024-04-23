@@ -1,6 +1,8 @@
 .footer {
-  border-top: 1px solid #f0f0f0;
   padding-top: 30px;
+  padding-inline: 16px;
+  background-color: #fff0f1;
+  box-shadow: 0 0 4px #a0a0a0;
 }
 
 .footer__container {
@@ -9,6 +11,11 @@
   justify-content: space-between;
   margin-inline: auto;
   overflow: hidden;
+}
+
+.footer__text {
+  display: flex;
+  align-items: center;
 }
 
 ::ng-deep .footer__social-media li {
@@ -22,4 +29,18 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
+}
+
+@media screen and (max-width: 320px) {
+  .footer__container {
+    flex-direction: column;
+  }
+
+  .footer__text {
+    justify-content: center;
+  }
+
+  .footer__social-media {
+    justify-content: space-evenly;
+  }
 }
