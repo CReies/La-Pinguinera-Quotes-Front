@@ -1,6 +1,7 @@
 .aside {
-  height: 100%;
-  box-shadow: 0 0 1px var(--color-900);
+  transition: 0.2s ease-in-out;
+  z-index: 1000;
+  width: 100%;
 }
 
 .aside__navbar {
@@ -14,7 +15,6 @@
 .aside__navbar li {
   padding-inline: 32px;
   align-self: center;
-  border-bottom: 1px solid #f0f0f0;
   height: 100%;
   display: flex;
   align-items: center;
@@ -25,4 +25,28 @@
 .aside__navbar li:hover {
   background-color: var(--color-100);
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .aside {
+    transform: scaleY(0%);
+    transform-origin: top;
+    transition: 0.2s ease-in-out;
+    position: fixed;
+    color: white;
+    left: 0;
+    background: -moz-linear-gradient(0deg, var(--color-600), var(--color-400));
+    background: -webkit-linear-gradient(
+      0deg,
+      var(--color-600),
+      var(--color-400)
+    );
+    background: linear-gradient(var(0deg, --color-600), var(--color-400));
+  }
+
+  .aside--show-responsive {
+    display: unset;
+    transform: scaleY(100%);
+    transition: 0.2s ease-in-out;
+  }
 }
