@@ -8,4 +8,35 @@
 
 body {
   flex-direction: column;
+  color: var(--darkest-color);
+}
+
+:root {
+  --primary-color: #42307f;
+  --secondary-color: #e1e2fe;
+  --tertiary-color: #eeefff;
+
+  --darkest-color: #281c4a;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--tertiary-color);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ff0000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #8f54a0;
+  border-radius: 30px;
+  border: 3px solid #ffffff;
 }
