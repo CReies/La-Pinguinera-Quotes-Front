@@ -1,39 +1,28 @@
 .aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 50px;
+  height: 100%;
+  box-shadow: 0 0 1px var(--primary-color);
 }
 
 .aside__navbar {
+  margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  gap: 40px;
+  list-style: none;
+  display: grid;
+  grid-template-rows: repeat(4, 3rem);
 }
 
 .aside__navbar li {
-  list-style: none;
+  padding-inline: 32px;
+  align-self: center;
+  border-bottom: 1px solid #f0f0f0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
 }
 
-::ng-deep .aside__link a {
-  color: #353434;
-  text-decoration: none;
-  font-size: 2rem;
-  font-style: italic;
-  transition: 0.2s all;
-}
-
-::ng-deep .aside__link a:hover {
-  color: black;
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 400;
-}
-
-@media screen and (max-width: 768px) {
-  ::ng-deep .aside__link a {
-    font-size: 1.5rem;
-  }
+.aside__navbar li:hover {
+  background-color: var(--secondary-color);
+  font-size: 1.2rem;
 }

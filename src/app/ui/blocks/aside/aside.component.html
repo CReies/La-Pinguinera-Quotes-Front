@@ -3,9 +3,7 @@
     <ul class="aside__navbar">
       @for (link of links; track $index) {
       <li>
-        <app-anchor href={{link.url}} class="aside__link">
-          {{link.name}}
-        </app-anchor>
+        <app-anchor href={{link.url}} class="aside__link">{{link.name}}</app-anchor>
       </li>
       }
     </ul>
