@@ -4,6 +4,15 @@
     <section class='form__group'>
       <app-label text='Budget' for='budget' />
       <input type="text" name="budget" id="budget" required formControlName="budget" class="form__input" />
+      @if (submitted && f['budget'].errors) {
+      <span class="form__error">
+        @if (f['budget'].errors['required']) {
+        Budget is required
+        } @else if (f['budget'].errors['min']) {
+        Budget cannot be negative
+        }
+      </span>
+      }
     </section>
     <app-button text="Quote" class="form__submit" />
   </fieldset>
