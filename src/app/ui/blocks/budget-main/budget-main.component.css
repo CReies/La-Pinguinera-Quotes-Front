@@ -25,5 +25,24 @@
 @media screen and (max-width: 768px) {
   :host {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .budget__all-books {
+    order: 1;
+  }
+
+  .budget__added-books {
+    order: 2;
+  }
+
+  .budget__form {
+    order: 3;
+  }
+
+  .budget__quoted-books {
+    grid-column: unset;
+    grid-row: unset;
+    order: 4;
   }
 }
