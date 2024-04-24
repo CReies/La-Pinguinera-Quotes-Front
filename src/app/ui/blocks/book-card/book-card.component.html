@@ -1,9 +1,9 @@
 <article class="card">
   <header class="card__header">
-    <app-title title={{book.title}} titleType="h2" />
+    <app-title [title]="parsedType + ': ' + book.title" titleType="h2" />
   </header>
   <main class="card__details">
-    <span class="card__author">{{book.author}}</span>
-    <span class="card__price">${{book.price}}</span>
+    <span class="card__author">Author: {{book.author}}</span>
+    <span class="card__price">${{parsedPrice}}</span>
   </main>
 </article>
