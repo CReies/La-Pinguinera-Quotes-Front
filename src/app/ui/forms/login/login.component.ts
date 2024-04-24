@@ -55,11 +55,14 @@ export class LoginComponent implements OnInit {
   }
 
   sendInfo($event: SubmitEvent) {
+    this.submitted = true;
     $event.preventDefault();
+
     if (this.form.invalid) {
-      alert('Please fill in the form correctly');
       return;
     }
+
     this.login.emit(this.form.getRawValue());
+    this.resetForm();
   }
 }
