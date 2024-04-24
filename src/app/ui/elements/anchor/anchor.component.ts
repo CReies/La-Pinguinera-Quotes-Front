@@ -1,14 +1,13 @@
-import { Component, Input, ViewChild } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-anchor',
   standalone: true,
-  imports: [RouterLink, RouterModule],
+  imports: [RouterLink],
   templateUrl: './anchor.component.html',
   styleUrl: './anchor.component.css',
 })
-@ViewChild
 export class AnchorComponent {
   @Input() href: string = '';
   @Input() text: string = '';
