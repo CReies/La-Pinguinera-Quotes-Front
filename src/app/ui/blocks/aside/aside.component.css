@@ -29,9 +29,7 @@
 
 @media screen and (max-width: 768px) {
   .aside {
-    transform: scaleY(0%);
     transform-origin: top;
-    transition: 0.2s ease-in-out;
     position: fixed;
     color: white;
     left: 0;
@@ -47,6 +45,11 @@
   .aside--show-responsive {
     display: unset;
     transform: scaleY(100%);
+    transition: 0.2s ease-in-out;
+  }
+
+  .aside--hide-responsive {
+    transform: scaleY(0%);
     transition: 0.2s ease-in-out;
   }
 

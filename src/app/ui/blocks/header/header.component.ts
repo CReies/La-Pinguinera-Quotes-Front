@@ -27,6 +27,6 @@ export class HeaderComponent {
 
   toggleAside(): void {
     this.closeMenuDisabled = !this.closeMenuDisabled;
-    this.onShowAside.emit(this.closeMenuDisabled);
+    this.onShowAside.emit(!this.closeMenuDisabled);
   }
 }

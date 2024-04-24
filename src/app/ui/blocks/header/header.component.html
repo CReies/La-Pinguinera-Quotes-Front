@@ -4,12 +4,12 @@
       <app-svg class="header__logo" icon="Logo" [size]=36 />
     </a>
     <section class="header__buttons">
-      @if(userData){
+      <!--       @if(userData){ -->
       <button (click)="logout()">logout</button>
-      }
-      <button>
-        <app-svg icon="{{closeMenuDisabled ? 'MenuOpen' : 'MenuClose'}}" (click)=" toggleAside()" />
+      <button class="header__responsive-menu-button">
+        <app-svg icon="{{closeMenuDisabled ? 'MenuOpen' : 'MenuClose'}}" (click)=" toggleAside()" color="white" />
       </button>
+      <!--       } -->
     </section>
   </section>
 </header>
