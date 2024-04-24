@@ -4,6 +4,8 @@
   padding: 10px;
   box-shadow: 0 0 10px #f0f0f0;
   width: 300px;
+  align-items: center;
+  justify-content: center;
 }
 
 .card__header {
@@ -16,6 +18,8 @@
 .card__details {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   justify-content: space-between;
   padding: 10px;
 }

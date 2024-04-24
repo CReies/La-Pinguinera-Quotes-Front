@@ -9,5 +9,5 @@
 
 .cards-container__card {
   display: flex;
-  flex: 1;
+  flex: 2;
 }
