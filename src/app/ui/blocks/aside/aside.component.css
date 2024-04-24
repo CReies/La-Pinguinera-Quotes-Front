@@ -49,4 +49,8 @@
     transform: scaleY(100%);
     transition: 0.2s ease-in-out;
   }
+
+  ::ng-deep .aside__link a {
+    color: var(--color-50) !important;
+  }
 }
