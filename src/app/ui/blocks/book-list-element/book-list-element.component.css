@@ -8,7 +8,7 @@
 }
 
 .book__title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
@@ -35,4 +35,44 @@
   border: none;
   padding: 10px;
   cursor: pointer;
+}
+
+.book__button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--color-50);
+  font-size: 1.2em;
+  cursor: pointer;
+
+  background: var(--color-600);
+  background: linear-gradient(var(--color-500) 0%, var(--color-600) 100%);
+  background: -moz-linear-gradient(var(--color-500) 0%, var(--color-600) 100%);
+  background: -webkit-linear-gradient(
+    var(--color-500) 0%,
+    var(--color-600) 100%
+  );
+  transition: 0.15s ease-in-out;
+}
+
+.book__button:hover {
+  color: white;
+  background: var(--color-700);
+  background: linear-gradient(var(--color-600) 0%, var(--color-700) 100%);
+  background: -moz-linear-gradient(var(--color-600) 0%, var(--color-700) 100%);
+  background: -webkit-linear-gradient(
+    var(--color-600) 0%,
+    var(--color-700) 100%
+  );
+}
+
+.book__button:active {
+  background: var(--color-800);
+  background: linear-gradient(var(--color-700) 0%, var(--color-800) 100%);
+  background: -moz-linear-gradient(var(--color-700) 0%, var(--color-800) 100%);
+  background: -webkit-linear-gradient(
+    var(--color-700) 0%,
+    var(--color-800) 100%
+  );
 }

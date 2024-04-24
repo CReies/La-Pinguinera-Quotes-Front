@@ -16,11 +16,21 @@ export class BookListElementComponent {
   @Output() addBook = new EventEmitter<IBook>();
   @Output() removeBook = new EventEmitter<IBook>();
 
+  typeParsed: string;
+  priceParsed: number;
+
   onAddBook(): void {
     this.addBook.emit(this.book);
   }
 
   onRemoveBook(): void {
     this.removeBook.emit(this.book);
+  }
+
+  ngOnInit(): void {
+    let types: IBook['type'][] = ['Book', 'Novel'];
+    this.typeParsed = types[this.book.type];
+
+    this.priceParsed = Math.round(this.book.price * this.quantity * 100) / 100;
   }
 }

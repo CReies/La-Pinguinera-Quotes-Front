@@ -1,7 +1,7 @@
 <li class="book">
   <header class="book__header">
     <span class="book__title">
-      {{book.title}}
+      {{typeParsed}}: {{book.title}}
       @if (renderAs === "added"){
       <span>x{{quantity}}</span>
       }
@@ -9,11 +9,10 @@
   </header>
   <main class="book__details">
     @if (renderAs === "added"){
-    <span class="book__price">${{book.price * quantity}}</span>
+    <span class="book__price">Price: ${{priceParsed * quantity}}</span>
     } @else {
-    <span class="book__price">${{book.price}}</span>
+    <span class="book__price">Price: ${{priceParsed}}</span>
     }
-    <span class="book__type">{{book.type}}</span>
 
   </main>
   @switch (renderAs) {
