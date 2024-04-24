@@ -1,10 +1,12 @@
-<section>
+<section class="budget__quoted-books">
   <app-title title="All the books" titleType="h2" />
-  <ul>
+  <ul class="budget__quoted-books-list">
     @for (book of data.quote.books; track $index) {
     <app-book-list-element [book]="book" />
     }
   </ul>
-  <span>{{data.quote.totalPrice}}</span>
-  <span>{{data.restBudget}}</span>
+  <section class="budget__details">
+    <span>Total Price: {{parsedTotalPrice}}</span>
+    <span>Rest of Budget: {{parsedRestBudget}}</span>
+  </section>
 </section>
