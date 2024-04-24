@@ -1,6 +1,6 @@
-<section>
+<section class="list__added-books">
   <app-title title="Added books" titleType="h2" />
-  <ul>
+  <ul class="list__added-books-list">
     @for (book of books; track $index) {
     <app-book-list-element [book]="book" renderAs="added" [quantity]="book.quantity" />
     }

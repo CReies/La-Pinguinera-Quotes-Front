@@ -1,0 +1,91 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.list__all-books,
+.list__form,
+.list__added-books,
+.list__quoted-books {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  max-height: calc(100vh - 64px - 64px);
+}
+
+.list__added-books {
+  flex-direction: column;
+}
+
+.list__quote-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: var(--color-50);
+  font-size: 1.2em;
+  cursor: pointer;
+
+  background: var(--color-600);
+  background: linear-gradient(var(--color-500) 0%, var(--color-600) 100%);
+  background: -moz-linear-gradient(var(--color-500) 0%, var(--color-600) 100%);
+  background: -webkit-linear-gradient(
+    var(--color-500) 0%,
+    var(--color-600) 100%
+  );
+  transition: 0.15s ease-in-out;
+}
+
+.list__quote-button:hover {
+  color: white;
+  background: var(--color-700);
+  background: linear-gradient(var(--color-600) 0%, var(--color-700) 100%);
+  background: -moz-linear-gradient(var(--color-600) 0%, var(--color-700) 100%);
+  background: -webkit-linear-gradient(
+    var(--color-600) 0%,
+    var(--color-700) 100%
+  );
+}
+
+.list__quote-button:active {
+  background: var(--color-800);
+  background: linear-gradient(var(--color-700) 0%, var(--color-800) 100%);
+  background: -moz-linear-gradient(var(--color-700) 0%, var(--color-800) 100%);
+  background: -webkit-linear-gradient(
+    var(--color-700) 0%,
+    var(--color-800) 100%
+  );
+}
+
+.list__quoted-books {
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  :host {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .list__all-books {
+    order: 1;
+  }
+
+  .list__added-books {
+    order: 2;
+  }
+
+  .list__form {
+    order: 3;
+  }
+
+  .list__quoted-books {
+    grid-column: unset;
+    grid-row: unset;
+    order: 4;
+  }
+}

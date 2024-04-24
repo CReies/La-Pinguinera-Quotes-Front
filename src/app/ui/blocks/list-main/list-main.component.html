@@ -1,1 +1,12 @@
-<p>list-main works!</p>
+<section class="list__all-books">
+  <app-list-all-books [books]="books" (addBook)="addBook($event)" (removeBook)="removeBook($event)" />
+</section>
+<section class="list__added-books">
+  <app-list-added-books [books]="cartList" />
+  <button (click)="quote()" class="list__quote-button">Quote</button>
+</section>
+@if (quoteData) {
+<section class="list__quoted-books">
+  <app-list-quoted-books [quoteData]="quoteData" />
+</section>
+}

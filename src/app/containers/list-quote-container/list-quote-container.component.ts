@@ -1,23 +1,16 @@
-import { IListQuoteResponse } from './../../core/models/list-quote-response.model';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { IBook } from '../../core/models/book.model';
-import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
-import { ListAllBooksComponent } from '../../ui/blocks/list-all-books/list-all-books.component';
-import { ListAddedBooksComponent } from '../../ui/blocks/list-added-books/list-added-books.component';
-import { ListQuotedBooksComponent } from '../../ui/blocks/list-quoted-books/list-quoted-books.component';
-import { ListQuoteContainerFacade } from './list-quote-container.facade';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IBookWithQuantity } from '../../core/models/book-with-quantity.model';
+import { IBook } from '../../core/models/book.model';
+import { ListMainComponent } from '../../ui/blocks/list-main/list-main.component';
+import { IListQuoteResponse } from './../../core/models/list-quote-response.model';
+import { ListQuoteContainerFacade } from './list-quote-container.facade';
 
 @Component({
   selector: 'app-list-quote-container',
   standalone: true,
-  imports: [
-    ListAllBooksComponent,
-    ListAddedBooksComponent,
-    ListQuotedBooksComponent,
-    AsyncPipe,
-  ],
+  imports: [ListMainComponent, AsyncPipe],
   templateUrl: './list-quote-container.component.html',
 })
 export class ListQuoteContainerComponent implements OnInit, OnDestroy {

@@ -1,4 +1,41 @@
 :host {
+  height: 100% !important;
+  width: 100%;
+}
+
+.list__quoted-books {
   display: flex;
-  width: 400px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  justify-items: center;
+  width: 100%;
+}
+
+.list__quoted-books-list {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+  width: 100%;
+  flex-direction: row;
+}
+
+.list__details {
+  border-top: 1px solid #a0a0a0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .list__quoted-books-list {
+    overflow-x: auto;
+  }
 }

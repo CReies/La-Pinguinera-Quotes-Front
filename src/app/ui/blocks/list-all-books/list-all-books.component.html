@@ -1,6 +1,6 @@
-<section>
+<section class="list__all-books">
   <app-title title="All the books" titleType="h2" />
-  <ul>
+  <ul class="list__all-books-list">
     @for (book of books; track $index) {
     <app-book-list-element [book]="book" renderAs="list" (addBook)="onAddBook($event)"
       (removeBook)="onRemoveBook($event)" />

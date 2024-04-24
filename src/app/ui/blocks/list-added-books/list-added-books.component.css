@@ -1,4 +1,30 @@
 :host {
+  height: 100% !important;
+}
+
+.list__added-books {
   display: flex;
-  width: 400px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  justify-items: center;
+}
+
+.list__added-books-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .list__added-books-list {
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+  }
 }
