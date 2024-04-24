@@ -4,10 +4,28 @@
     <section class='form__group'>
       <app-label text='Email' for='email' />
       <input id="email" name="email" type="email" required formControlName="email" class="form__input" />
+      @if (submitted && f['email'].errors) {
+      <span class="form__error">
+        @if (f['email'].errors['required']) {
+        Email is required
+        } @else if (f['email'].errors['email']) {
+        Email is invalid
+        }
+      </span>
+      }
     </section>
     <section class='form__group'>
       <app-label text='Password' for='password' />
       <input id="password" name="password" type="password" required formControlName="password" class="form__input" />
+      @if (submitted && f['password'].errors) {
+      <span class="form__error">
+        @if (f['password'].errors['required']) {
+        Password is required
+        } @else if (f['password'].errors['minlength']) {
+        Password must be at least 6 characters long
+        }
+      </span>
+      }
     </section>
     <app-button text="Login" class="form__submit" />
   </fieldset>
