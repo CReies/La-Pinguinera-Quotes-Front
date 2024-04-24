@@ -56,44 +56,18 @@
     font-size: 1.2em;
     cursor: pointer;
 
-    background: var(--color-600);
-    background: linear-gradient(var(--color-500) 0%, var(--color-600) 100%);
-    background: -moz-linear-gradient(
-      var(--color-500) 0%,
-      var(--color-600) 100%
-    );
-    background: -webkit-linear-gradient(
-      var(--color-500) 0%,
-      var(--color-600) 100%
-    );
+    background: transparent;
+    border: 2px solid var(--color-200);
     transition: 0.15s ease-in-out;
   }
 
   button:hover {
     color: white;
-    background: var(--color-700);
-    background: linear-gradient(var(--color-600) 0%, var(--color-700) 100%);
-    background: -moz-linear-gradient(
-      var(--color-600) 0%,
-      var(--color-700) 100%
-    );
-    background: -webkit-linear-gradient(
-      var(--color-600) 0%,
-      var(--color-700) 100%
-    );
+    border: 2px solid var(--color-100);
   }
 
   button:active {
-    background: var(--color-800);
-    background: linear-gradient(var(--color-700) 0%, var(--color-800) 100%);
-    background: -moz-linear-gradient(
-      var(--color-700) 0%,
-      var(--color-800) 100%
-    );
-    background: -webkit-linear-gradient(
-      var(--color-700) 0%,
-      var(--color-800) 100%
-    );
+    border: 2px solid var(--color-50);
   }
 }
 
