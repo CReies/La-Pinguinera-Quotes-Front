@@ -4,14 +4,45 @@
     <section class='form__group'>
       <app-label text='Email' for='email' />
       <input id="email" name="email" type="email" required formControlName="email" class="form__input" />
+      @if (submitted && f['email'].errors) {
+      <span class="form__error">
+        @if (f['email'].errors['required']) {
+        Email is required
+        } @else if (f['email'].errors['email']) {
+        Email is invalid
+        }
+      </span>
+      }
     </section>
     <section class='form__group'>
       <app-label text='Username' for='username' />
       <input type="text" name="username" id="username" required formControlName="username" class="form__input" />
+      @if (submitted && f['username'].errors) {
+      <span class="form__error">
+        @if (f['username'].errors['required']) {
+        Username is required
+        } @else if (f['username'].errors['minlength']) {
+        Username must be at least 3 characters long
+        } @else if (f['username'].errors['maxlength']) {
+        Username must be at most 20 characters long
+        }
+      </span>
+      }
     </section>
     <section class='form__group'>
       <app-label text='Password' for='password' />
       <input id=" password" name="password" type="password" required formControlName="password" class="form__input" />
+      @if (submitted && f['password'].errors) {
+      <span class="form__error">
+        @if (f['password'].errors['required']) {
+        Password is required
+        } @else if (f['password'].errors['minlength']) {
+        Password must be at least 3 characters long
+        } @else if (f['password'].errors['maxlength']) {
+        Password must be at most 100 characters long
+        }
+      </span>
+      }
     </section>
     <app-button text="Register" class="form__submit" />
   </fieldset>
