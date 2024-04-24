@@ -8,6 +8,7 @@ import { BudgetAddedBooksComponent } from '../../ui/blocks/budget-added-books/bu
 import { BudgetQuotedBooksComponent } from '../../ui/blocks/budget-quoted-books/budget-quoted-books.component';
 import { IBudgetQuoteResponse } from '../../core/models/budget-quote-response.model';
 import { SendBudgetDataComponent } from '../../ui/forms/send-budget-data/send-budget-data.component';
+import { BudgetMainComponent } from '../../ui/blocks/budget-main/budget-main.component';
 
 @Component({
   selector: 'app-budget-quote-container',
@@ -17,7 +18,7 @@ import { SendBudgetDataComponent } from '../../ui/forms/send-budget-data/send-bu
     BudgetAddedBooksComponent,
     BudgetQuotedBooksComponent,
     AsyncPipe,
-    SendBudgetDataComponent,
+    SendBudgetDataComponent,BudgetMainComponent
   ],
   templateUrl: './budget-quote-container.component.html',
 })

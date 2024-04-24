@@ -1,6 +1,2 @@
-<app-budget-all-books [books]="books$ | async" (addBook)="addBook($event)" (removeBook)="removeBook($event)" />
-<app-budget-added-books [books]="cartBudget$ | async" />
-<app-send-budget-data (sendBudgetData)="quote($event)" />
-@if (quoteData$ | async; as quoteData){
-<app-budget-quoted-books [data]="quoteData" />
-}
+<app-budget-main [books]="books$ | async" (onAddBook)="addBook($event)" (onRemoveBook)="removeBook($event)"
+  [cartBudget]="cartBudget$ |async" (onQuote)="quote($event)" [quoteData]="quoteData$ | async" />
