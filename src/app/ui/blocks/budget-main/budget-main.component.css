@@ -1,0 +1,23 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.budget__all-books,
+.budget__form,
+.budget__added-books,
+.budget__quoted-books {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  max-height: calc(100vh - 64px - 64px);
+}
+
+.budget__quoted-books {
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
+  width: 100%;
+}

@@ -1,0 +1,14 @@
+<section class="budget__all-books">
+  <app-budget-all-books [books]="books" (addBook)="addBook($event)" (removeBook)="removeBook($event)" />
+</section>
+<section class="budget__form">
+  <app-send-budget-data (sendBudgetData)="quote($event)" />
+</section>
+<section class="budget__added-books">
+  <app-budget-added-books [books]="cartBudget" />
+</section>
+@if (quoteData){
+<section class="budget__quoted-books">
+  <app-budget-quoted-books [data]="quoteData" />
+</section>
+}
