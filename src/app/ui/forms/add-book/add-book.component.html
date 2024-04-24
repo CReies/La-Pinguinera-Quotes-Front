@@ -4,14 +4,41 @@
     <section class='form__group'>
       <app-label text='Title' for='title' />
       <input id="title" name="title" type="text" required formControlName="title" class="form__input" />
+      @if (submitted && f["title"].errors) {
+      <span class="form__error">
+        @if (f["title"].errors["required"]) {
+        Title is required
+        } @else if (f["title"].errors["minlength"]) {
+        Title must be at least 3 characters long
+        }
+      </span>
+      }
     </section>
     <section class='form__group'>
       <app-label text='Author' for='author' />
       <input id="author" name="author" type="text" required formControlName="author" class="form__input" />
+      <span class="form__error">
+        @if (submitted && f["author"].errors) {
+        @if (f["author"].errors["required"]) {
+        Author is required
+        } @else if (f["author"].errors["minlength"]) {
+        Author must be at least 3 characters long
+        }
+        }
+      </span>
     </section>
     <section class='form__group'>
       <app-label text='Price' for='price' />
       <input id="price" name="price" type="number" required formControlName="price" class="form__input" />
+      <span class="form__error">
+        @if (submitted && f["price"].errors) {
+        @if (f["price"].errors["required"]) {
+        Price is required
+        } @else if (f["price"].errors["min"]) {
+        Price cannot be negative
+        }
+        }
+      </span>
     </section>
     <section class='form__group'>
       <app-label text='Type' for='type' />
@@ -19,6 +46,13 @@
         <option value="Book">Book</option>
         <option value="Novel">Novel</option>
       </select>
+      <span class="form__error">
+        @if (submitted && f["type"].errors) {
+        @if (f["type"].errors["required"]) {
+        Type is required
+        }
+        }
+      </span>
     </section>
     <app-button text="Create" class="form__submit" />
   </fieldset>

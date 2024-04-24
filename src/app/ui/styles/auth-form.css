@@ -29,6 +29,12 @@
   border-radius: 5px;
 }
 
+.form__error {
+  color: var(--color-800);
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
 ::ng-deep .form__submit button {
   width: 100%;
   padding: 10px;
